@@ -15,7 +15,7 @@ public class WebCrawler {
     private static final Set<String> visitedUrls = new HashSet<>();
 
     public static void main(String[] args) {
-        String startUrl = "https://amasya.edu.tr/"; // Başlangıç URL'si
+        String startUrl = "https://ornek.com.tr/"; // Başlangıç URL'si
         System.out.println("Web Crawler Baslatiliyor...");
         crawl(startUrl);
 
@@ -49,7 +49,7 @@ public class WebCrawler {
                 
                 String nextUrl = link.absUrl("href"); // Tam URL'yi al
                 
-                if ((nextUrl.endsWith(".aspx") || nextUrl.endsWith("amasya.edu")) && !visitedUrls.contains(nextUrl)) {
+                if ((nextUrl.endsWith(".aspx") || nextUrl.endsWith(".com.tr")) && !visitedUrls.contains(nextUrl)) {
                     
                     crawl(nextUrl); // Bağlantıyı taramaya devam et
                 }
